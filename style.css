@@ -1,0 +1,161 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Cores principais */
+:root {
+    --verde: #4CAF50;
+    --verde-claro: #A8E6A3;
+    --cinza: #f4f4f4;
+    --escuro: #333;
+}
+
+/* Body */
+body {
+    background-color: var(--cinza);
+    color: var(--escuro);
+}
+
+/* Cabeçalho */
+header {
+    background-color: var(--verde);
+    color: white;
+    padding: 20px 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+}
+
+header h1 {
+    font-size: 1.8rem;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+    background: url('https://images.unsplash.com/photo-1592928301720-16d2b2efb7c1?auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-top: 20px;
+    animation: fadeIn 3s ease-in-out;
+}
+
+/* Cards Section */
+.dicas {
+    padding: 60px 20px;
+    background-color: var(--cinza);
+    text-align: center;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Contato */
+.contato {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.contato form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin: auto;
+}
+
+.contato input, .contato textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contato button {
+    padding: 10px;
+    background-color: var(--verde);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contato button:hover {
+    background-color: var(--verde-claro);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--escuro);
+    color: white;
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+/* Responsivo */
+@media(max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+}
